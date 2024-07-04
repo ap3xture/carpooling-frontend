@@ -1,17 +1,19 @@
 import { useState } from "react"
 
-const Login = () => {
+const Signup = () => {
     const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const onButtonClick = () => {
-        console.log("signin button pressed")
+        console.log("signup button pressed")
     }
     const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('')
+    const [usernameError, setUsernameError] = useState('')
 
     return (
         <section className="login">
-            <h2>Login</h2>
+            <h2>Signup</h2>
             <input
                 value={email}
                 placeholder="Enter your email here"
@@ -19,6 +21,14 @@ const Login = () => {
                 className={'inputBox'}
             />
                     <label className="errorLabel">{emailError}</label>
+
+            <input
+                value={username}
+                placeholder="Enter your username here"
+                onChange={(ev) => setUsername(ev.target.value)}
+                className={'inputBox'}
+            />
+                                <label className="errorLabel">{usernameError}</label>
 
             <input
                 value={password}
@@ -34,4 +44,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Signup
